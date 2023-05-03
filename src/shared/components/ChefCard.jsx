@@ -1,16 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaRegThumbsUp } from "react-icons/fa";
+import LazyLoad from "react-lazy-load";
 
 const ChefCard = ({ data }) => {
   const { id, name, picture, experience, recipes, totalLikes } = data;
 
   return (
     <div className="w-2/3">
-      <div className="card card-side bg-base-100 shadow-xl">
-        <figure>
+      <div className="card md:card-side bg-base-100 shadow-xl">
+        <LazyLoad >
           <img className="w-72" src={picture} alt="Chef" />
-        </figure>
+        </LazyLoad>
+        
         <div className="card-body w-96 self-center">
           <h2 className="card-title font-bold">{name}</h2>
           <p>
