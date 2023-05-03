@@ -15,7 +15,7 @@ const Nav = () => {
       <Link to="/blog">Blog</Link>
     </div>
         <div>{user ? <div className="w-10 rounded-full">
-          <img src={user.photoURL} />
+          <img className='rounded-full' src={user?.photoURL} />
         </div> : <Link to="/login" className='btn btn-primary btn-sm mr-5'>Login</Link>}</div>
   </div>
 </div>
