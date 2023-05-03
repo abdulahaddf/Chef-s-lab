@@ -14,16 +14,16 @@ const Nav = () => {
       <div className="">
         <Link
           to="/"
-          className="text-purple-600  font-extrabold normal-case text-4xl"
+          className="text-purple-600 hover:text-purple-700  font-extrabold normal-case text-4xl"
         >
-          Chef Recipe
+          Chef's Lab
         </Link>
       </div>
       <div className="flex font-bold text-xl text-purple-600 ">
         <div className="mr-3">
           <NavLink
             className={({ isActive }) =>
-              isActive ? "text-black" : "text-purple-600"
+              isActive ? "text-purple-900" : "text-purple-600"
             }
             to="/"
           >
@@ -33,7 +33,7 @@ const Nav = () => {
         <div>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "text-black" : "text-purple-600"
+              isActive ? "text-purple-900" : "text-purple-600"
             }
             to="/blog"
           >
@@ -54,7 +54,7 @@ const Nav = () => {
             <div className="relative w-10 rounded-full">
   <img className="rounded-full" src={user?.photoURL} />
   <div className="absolute bottom-2 left-0 hover:left-10 w-full opacity-0 hover:opacity-100">
-    <p className="text-black text-md font-medium w-24">{user?.displayName}</p>
+    <p className="text-purple-900 text-md font-medium w-24">{user?.displayName}</p>
   </div>
 </div>
           </div>
