@@ -9,20 +9,13 @@ const Recipes = () => {
   const data = useLoaderData();
   const { id, name, picture, experience, recipes, totalLikes, bio } = data;
   const [fav, setFav] = useState(true);
-  const notify = () =>
-    toast("The recipe is your favorite!", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
+  const notify = () =>{
+    toast("The recipe is your favorite!");
+    setFav(false)
+};
   return (
     <div className="w-4/5 mx-auto">
-      <div className="card md:card-side bg-base-100 shadow-xl my-10 border border-purple-600">
+      <div className="card md:card-side bg-base-100 p-5 shadow-xl my-10 border border-purple-600">
         <LazyLoad>
           <img className="w-96" src={picture} alt="Chef" />
         </LazyLoad>
@@ -44,7 +37,7 @@ const Recipes = () => {
           </div>
         </div>
       </div>
-      <div className="text-center text-3xl my-10">
+      <div className="border p-2 shadow-md text-center text-3xl my-10">
         <h1>Recipes of {name}</h1>
       </div>
       <div className="md:flex self-center">
@@ -72,12 +65,12 @@ const Recipes = () => {
                 </div>
                 <div>
                   <div
-                    onClick={notify}
+                    
                     className="flex items-center gap-2 font-bold mt-4"
                   >
                     <button
-                      className={`btn ${fav ? "" : "disabled"}`}
-                      onClick={() => setFav(false)}
+                      className={`btn-purple ${fav ? "" : "disabled"}`}
+                      onClick={notify}
                     >
                       <FaRegHeart></FaRegHeart> Add to Favorite
                     </button>
@@ -89,7 +82,7 @@ const Recipes = () => {
         ))}
       </div>
       <ToastContainer
-        position="top-center"
+        position="top-right"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}

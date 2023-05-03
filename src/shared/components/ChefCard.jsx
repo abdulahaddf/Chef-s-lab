@@ -8,7 +8,7 @@ const ChefCard = ({ data }) => {
 
   return (
     <div className="w-2/3">
-      <div className="card md:card-side bg-base-100 shadow-xl">
+      <div className="card md:card-side bg-base-100 p-2 shadow-xl">
         <LazyLoad >
           <img className="w-72" src={picture} alt="Chef" />
         </LazyLoad>
@@ -27,7 +27,7 @@ const ChefCard = ({ data }) => {
             {totalLikes}
           </div>
           <div className="card-action">
-            <Link to={`/${id}`} className="btn btn-primary">
+            <Link to={`/${id}`} className="btn-purple">
               View recipe
             </Link>
           </div>
