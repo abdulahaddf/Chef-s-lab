@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../provider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const {signIn,signInGoogle,signInGit } = useContext(AuthContext)
@@ -92,12 +93,12 @@ const Login = () => {
             <p className="mt-8 text-xs font-light text-center text-gray-700">
                 {" "}
                 Don't have an account?{" "}
-                <a
-                    href="#"
+                <Link to="/register"
+                    
                     className="font-medium text-purple-600 hover:underline"
                 >
                     Sign up
-                </a>
+                </Link>
             </p>
         </div>
     </div>

@@ -5,11 +5,15 @@ import Register from "../pages/login/register/Register";
 import HomeLayout from "../layouts/HomeLayout";
 import Home from "../pages/Home/Home";
 import Blog from "../pages/blog/Blog";
+import PrivateRoutes from "./PrivateRoutes";
+import Recipes from "../pages/recipes/Recipes";
+import ErrorPage from "../shared/components/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <HomeLayout></HomeLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -31,6 +35,11 @@ const router = createBrowserRouter([
                 path: '/blog',
                 element: <Blog></Blog>
             },
+            {
+                path: ':id',
+                element: <PrivateRoutes><Recipes></Recipes></PrivateRoutes>,
+                loader: ({params}) => fetch(`https://chef-recipe-server-abdulahaddf.vercel.app/data/${params.id}`)
+            }
         ]
     },
    

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../provider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     const { user, createUser,signInGoogle,signInGit } = useContext(AuthContext);
@@ -124,13 +125,13 @@ const Register = () => {
 
                 <p className="mt-8 text-xs font-light text-center text-gray-700">
                     {" "}
-                    Don't have an account?{" "}
-                    <a
-                        href="#"
-                        className="font-medium text-purple-600 hover:underline"
-                    >
-                        Sign up
-                    </a>
+                    Already have an account?{" "}
+                    <Link to="/login"
+                    
+                    className="font-medium text-purple-600 hover:underline"
+                >
+                    Sign In
+                </Link>
                 </p>
             </div>
         </div>

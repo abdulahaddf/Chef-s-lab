@@ -10,9 +10,12 @@ const Home = () => {
     return (
         <div>
             <Hero></Hero>
+            <div className='className="grid grid-cols-2"'>
+            <h1 className="text-6xl">Chef's Corner</h1>
             {
                 datas.map(data => <ChefCard data={data} key={data.id}></ChefCard>)
             }
+            </div>
         </div>
     );
 };
