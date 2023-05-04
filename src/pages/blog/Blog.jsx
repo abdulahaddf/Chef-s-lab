@@ -148,10 +148,10 @@ const Blog = () => {
           </p>
         </div>
       </div>
-      <div className="w-40 my-20 mx-auto">
+      <div className=" md:w-64 my-20 mx-auto">
     <ReactToPdf targetRef={document.body} filename="blog.pdf" options={options} x={0} y={0.5} scale={0.8} >
         {({toPdf}) => (
-            <button className="btn-purple" onClick={toPdf}> <FaDownload></FaDownload> Download pdf</button>
+            <button className="btn-purple" onClick={toPdf} > <FaDownload></FaDownload> Download blogs pdf</button>
         )}
     </ReactToPdf>
     

@@ -26,7 +26,7 @@ const Home = () => {
     <div>
       <Hero></Hero>
       <h1 className="text-5xl text-purple-600 font-bold text-center my-10">
-        Our Chefs
+        Our Top Chefs
       </h1>
       <div className="grid md:grid-cols-2 gap-3 w-full place-items-center my-16">
         {datas.map((data) => (

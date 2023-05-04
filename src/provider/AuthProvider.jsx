@@ -8,8 +8,10 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   GithubAuthProvider,
+  updateProfile,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
+import { Navigate } from "react-router-dom";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -43,6 +45,8 @@ const AuthProvider = ({ children }) => {
       .then((result) => {
         const user = result.user;
         setUser(user);
+        // Navigate(to="/",{replace: true})
+        <Navigate to="/" replace={true}/>
         console.log(user);
       })
       .catch((err) => {
@@ -61,7 +65,10 @@ const AuthProvider = ({ children }) => {
         console.log(err.message);
       });
   };
+  const profileUpdate = (profile) => {
+    return updateProfile(auth.currentUser, profile)
 
+}
   //observe auth state changes
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -72,16 +79,13 @@ const AuthProvider = ({ children }) => {
     return () => unSubscribe();
   }, []);
 
-  const updateProfile = (user, name, url) => {
-    updateProfile(user, {
-     displayName:name, photoURL:url,
-   }).then(() => {
-     console.log("profile updated");
-   }).catch((error) => {
-     console.log(error);
-   });}
+  // const updateProfile = (user, name, url) => {
+  //   updateProfile(user, {
+  //    displayName:name,
+  //   photoURL:url,
+  //  })}
 
-
+console.log(auth,user);
   const authInfo = {
     user,
     createUser,
@@ -90,7 +94,7 @@ const AuthProvider = ({ children }) => {
     signInGoogle,
     signInGit,
     loading,
-    updateProfile,
+    profileUpdate,
   };
 
   return (

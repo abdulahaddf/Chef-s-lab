@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaRegHeart, FaRegThumbsUp } from "react-icons/fa";
+import { FaRegHeart, FaRegStar, FaRegThumbsUp } from "react-icons/fa";
 import LazyLoad from "react-lazy-load";
 import { Link, useLoaderData } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -17,7 +17,7 @@ const Recipes = () => {
     <div className="w-4/5 mx-auto">
       <div className="card md:card-side bg-base-100 p-5 shadow-xl my-10 border border-purple-600">
         <LazyLoad>
-          <img className="w-96" src={picture} alt="Chef" />
+          <img className="w-96" src={picture} alt="Chef"/>
         </LazyLoad>
         <div className="card-body w-96 self-center">
           <h2 className="card-title font-bold">{name}</h2>
@@ -58,9 +58,9 @@ const Recipes = () => {
                     <span className="font-semibold">Cooking Method:</span>{" "}
                     {recipe.method}
                   </p>
-                  <p>
+                  <p className="flex items-center">
                     <span className="font-semibold">Ratings:</span>{" "}
-                    {recipe.ratings}
+                    {recipe.ratings}<FaRegStar></FaRegStar>
                   </p>
                 </div>
                 <div>
@@ -69,7 +69,8 @@ const Recipes = () => {
                     className="flex items-center gap-2 font-bold mt-4"
                   >
                     <button
-                      className={`btn-purple ${fav ? "btn-purple" : "disabled:opacity-50"}`}
+                       className="btn-purple" 
+                       disabled={!fav}
                       onClick={notify}
                     >
                       <FaRegHeart></FaRegHeart> Add to Favorite
@@ -81,18 +82,7 @@ const Recipes = () => {
           </>
         ))}
       </div>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
+     
     </div>
   );
 };
