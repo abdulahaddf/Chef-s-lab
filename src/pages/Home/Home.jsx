@@ -3,6 +3,8 @@ import Hero from "../../shared/components/Hero";
 import { useLoaderData } from "react-router-dom";
 import ChefCard from "../../shared/components/ChefCard";
 import { AuthContext } from "../../provider/AuthProvider";
+import Tips from "../../shared/components/Tips";
+import Services from "../../shared/components/Services";
 
 const Home = () => {
   const datas = useLoaderData();
@@ -23,7 +25,7 @@ const Home = () => {
   return (
     <div>
       <Hero></Hero>
-      <h1 className="text-7xl text-purple-600 font-bold text-center my-10">
+      <h1 className="text-5xl text-purple-600 font-bold text-center my-10">
         Our Chefs
       </h1>
       <div className="grid md:grid-cols-2 gap-3 w-full place-items-center my-16">
@@ -31,6 +33,8 @@ const Home = () => {
           <ChefCard data={data} key={data.id}></ChefCard>
         ))}
       </div>
+      <Tips></Tips>
+      <Services></Services>
     </div>
   );
 };

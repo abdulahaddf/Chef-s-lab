@@ -1,19 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../provider/AuthProvider';
 import { Link } from 'react-router-dom';
+import { updateProfile } from 'firebase/auth';
 
+//   console.log(user, createUser);
 const Register = () => {
-    const { user, createUser,signInGoogle,signInGit } = useContext(AuthContext);
-  console.log(user, createUser);
+    const {user , createUser,signInGoogle,signInGit,logOut } = useContext(AuthContext);
+//   const [name, setName] = useState("")
+//   const [url, setUrl] = useState("")
 
   const handleReg = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    console.log( name, email, password);
-   
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const url = form.url.value;
+    console.log(user,name, email, password,url );
+//    setName(name);
+//    setUrl(url);
     createUser(email, password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser)
@@ -22,7 +27,21 @@ const Register = () => {
         console.log(err);
       });
     });
-  };
+    updateProfile(user,name,url)
+   };
+
+   const updateProfile = (user, name, url) => {
+      updateProfile(user, {
+       displayName:name, photoURL:url,
+     }).then(() => {
+       console.log("profile updated");
+     }).catch((error) => {
+       console.log(error);
+     });
+
+  }
+//    console.log(user);
+  
     return (
         <div>
              <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
