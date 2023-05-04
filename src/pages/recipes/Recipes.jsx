@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Recipes = () => {
   const data = useLoaderData();
-  const { id, name, picture, experience, recipes, totalLikes, bio } = data;
+  const { name, picture, experience, recipes, totalLikes, bio } = data;
   const [fav, setFav] = useState(true);
   const notify = () =>{
     toast("The recipe is your favorite!");

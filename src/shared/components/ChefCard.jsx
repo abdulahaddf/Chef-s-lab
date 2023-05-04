@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaRegThumbsUp } from "react-icons/fa";
+import { FaArrowRight, FaRegThumbsUp } from "react-icons/fa";
 import LazyLoad from "react-lazy-load";
 
 const ChefCard = ({ data }) => {
@@ -28,7 +28,7 @@ const ChefCard = ({ data }) => {
           </div>
           <div className="card-action">
             <Link to={`/${id}`} className="btn-purple">
-              View recipe
+              View recipes <FaArrowRight className="ml-2"></FaArrowRight>
             </Link>
           </div>
         </div>

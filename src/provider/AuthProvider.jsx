@@ -11,7 +11,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
-import { Navigate } from "react-router-dom";
+
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -45,8 +45,7 @@ const AuthProvider = ({ children }) => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-        // Navigate(to="/",{replace: true})
-        <Navigate to="/" replace={true}/>
+        
         console.log(user);
       })
       .catch((err) => {
