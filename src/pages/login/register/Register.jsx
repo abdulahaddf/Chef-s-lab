@@ -16,32 +16,29 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
 
-
   const isDisabled = email == "" || password == "";
 
-
   const handleReg = (e) => {
-      e.preventDefault();
+    e.preventDefault();
     if (emailError) {
-        e.target.email.focus();
-        return;
-      } else if (passwordError) {
-        e.target.password.focus();
-        return;
-      }
+      e.target.email.focus();
+      return;
+    } else if (passwordError) {
+      e.target.password.focus();
+      return;
+    }
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     const url = form.url.value;
     console.log(user, name, email, password, url);
-    
 
-    createUser(email, password)
-    .then((result) => {
+    createUser(email, password).then((result) => {
       const loggedUser = result.user;
-      profileUpdate({displayName:name,photoURL:url})
-      console.log(loggedUser)
+      profileUpdate({ displayName: name, photoURL: url });
+      console
+        .log(loggedUser)
 
         .catch((err) => {
           console.log(err);
@@ -49,11 +46,8 @@ const Register = () => {
     });
   };
 
-
-const navigate = useNavigate();
-const location = useLocation();
-
-
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleEmail = (e) => {
     const emailInput = e.target.value;
@@ -69,7 +63,6 @@ const location = useLocation();
     }
   };
 
-
   const handlePassword = (e) => {
     const passwordInput = e.target.value;
     setPassword(passwordInput);
@@ -81,9 +74,6 @@ const location = useLocation();
       setPasswordError("");
     }
   };
-
-
-
 
   //    console.log(user);
 
@@ -111,8 +101,8 @@ const location = useLocation();
             <div className="mb-2">
               <label
                 for="email"
-                
-                className="block text-sm font-semibold text-gray-800 " required
+                className="block text-sm font-semibold text-gray-800 "
+                required
               >
                 Email
               </label>
@@ -154,11 +144,21 @@ const location = useLocation();
               Forget Password?
             </a>
             <div>
-           <div> {emailError && <span className="error">{emailError}</span>}</div> 
-            <div>{passwordError && <span className="error">{passwordError}</span>}</div>
+              <div>
+                {" "}
+                {emailError && <span className="error">{emailError}</span>}
+              </div>
+              <div>
+                {passwordError && (
+                  <span className="error">{passwordError}</span>
+                )}
+              </div>
             </div>
             <div className="mt-6">
-              <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600" disabled={isDisabled}>
+              <button
+                className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600"
+                disabled={isDisabled}
+              >
                 Register
               </button>
             </div>
@@ -192,7 +192,6 @@ const location = useLocation();
                 <path d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"></path>
               </svg>
             </button>
-            
           </div>
 
           <p className="mt-8 text-xs font-light text-center text-gray-700">

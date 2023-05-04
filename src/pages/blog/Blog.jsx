@@ -2,14 +2,13 @@ import React from "react";
 import { FaDownload } from "react-icons/fa";
 import ReactToPdf from "react-to-pdf";
 
-
 const Blog = () => {
   const ref = React.createRef();
   const options = {
-    orientation: 'portrait',
-    unit: 'in',
-    format: [14, 15]
-};
+    orientation: "portrait",
+    unit: "in",
+    format: [14, 15],
+  };
   return (
     <div ref={ref}>
       <h1 className="text-5xl font-bold text-center my-10">
@@ -149,14 +148,22 @@ const Blog = () => {
         </div>
       </div>
       <div className=" md:w-64 my-20 mx-auto">
-    <ReactToPdf targetRef={document.body} filename="blog.pdf" options={options} x={0} y={0.5} scale={0.8} >
-        {({toPdf}) => (
-            <button className="btn-purple" onClick={toPdf} > <FaDownload></FaDownload> Download blogs pdf</button>
-        )}
-    </ReactToPdf>
-    
-    
-</div>
+        <ReactToPdf
+          targetRef={document.body}
+          filename="blog.pdf"
+          options={options}
+          x={0}
+          y={0.5}
+          scale={0.8}
+        >
+          {({ toPdf }) => (
+            <button className="btn-purple" onClick={toPdf}>
+              {" "}
+              <FaDownload></FaDownload> Download blogs pdf
+            </button>
+          )}
+        </ReactToPdf>
+      </div>
     </div>
   );
 };

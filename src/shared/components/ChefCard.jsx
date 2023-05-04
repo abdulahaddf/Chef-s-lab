@@ -9,10 +9,10 @@ const ChefCard = ({ data }) => {
   return (
     <div className="md:w-2/3">
       <div className="card md:card-side bg-base-100 p-2 shadow-xl self-center">
-        <LazyLoad >
+        <LazyLoad>
           <img className="md:w-72 rounded-md" src={picture} alt="Chef" />
         </LazyLoad>
-        
+
         <div className="card-body p-2 md:p-8 w-96 self-center">
           <h2 className="card-title font-bold">{name}</h2>
           <p>

@@ -12,7 +12,6 @@ import {
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
-
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
@@ -45,7 +44,7 @@ const AuthProvider = ({ children }) => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-        
+
         console.log(user);
       })
       .catch((err) => {
@@ -65,9 +64,8 @@ const AuthProvider = ({ children }) => {
       });
   };
   const profileUpdate = (profile) => {
-    return updateProfile(auth.currentUser, profile)
-
-}
+    return updateProfile(auth.currentUser, profile);
+  };
   //observe auth state changes
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -78,13 +76,7 @@ const AuthProvider = ({ children }) => {
     return () => unSubscribe();
   }, []);
 
-  // const updateProfile = (user, name, url) => {
-  //   updateProfile(user, {
-  //    displayName:name,
-  //   photoURL:url,
-  //  })}
-
-console.log(auth,user);
+  console.log(auth, user);
   const authInfo = {
     user,
     createUser,
