@@ -26,5 +26,5 @@ Install my-project with npm
 
 ## Live Website
 
-https://job-hunter-df.netlify.app/
+https://chef-recipe-55e66.web.app/
 
