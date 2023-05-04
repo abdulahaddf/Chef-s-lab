@@ -72,6 +72,16 @@ const AuthProvider = ({ children }) => {
     return () => unSubscribe();
   }, []);
 
+  const updateProfile = (user, name, url) => {
+    updateProfile(user, {
+     displayName:name, photoURL:url,
+   }).then(() => {
+     console.log("profile updated");
+   }).catch((error) => {
+     console.log(error);
+   });}
+
+
   const authInfo = {
     user,
     createUser,
@@ -80,6 +90,7 @@ const AuthProvider = ({ children }) => {
     signInGoogle,
     signInGit,
     loading,
+    updateProfile,
   };
 
   return (

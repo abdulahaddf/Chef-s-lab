@@ -10,11 +10,11 @@ const Nav = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="flex bg-purple-100 h-20 items-center p-3 ">
+    <div className="flex bg-purple-100 md:h-20 items-center p-3 text-center ">
       <div className="flex-none">
         <Link
           to="/"
-          className="text-purple-600 hover:text-purple-700  font-extrabold normal-case text-4xl"
+          className="text-purple-600 hover:text-purple-700  font-extrabold normal-case text-xl md:text-4xl"
         >
           Chef's Lab
         </Link>
@@ -44,7 +44,7 @@ const Nav = () => {
         </div>
       </div>
 
-      <div className="flex-none">
+      <div className="md:flex-none">
         {user ? (
           <div className="flex items-center">
             <button

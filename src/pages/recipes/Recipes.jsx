@@ -69,7 +69,7 @@ const Recipes = () => {
                     className="flex items-center gap-2 font-bold mt-4"
                   >
                     <button
-                      className={`btn-purple ${fav ? "" : "disabled"}`}
+                      className={`btn-purple ${fav ? "btn-purple" : "disabled:opacity-50"}`}
                       onClick={notify}
                     >
                       <FaRegHeart></FaRegHeart> Add to Favorite

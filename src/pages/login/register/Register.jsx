@@ -5,7 +5,7 @@ import { updateProfile } from 'firebase/auth';
 
 //   console.log(user, createUser);
 const Register = () => {
-    const {user , createUser,signInGoogle,signInGit,logOut } = useContext(AuthContext);
+    const {user , createUser,signInGoogle,signInGit,logOut,updateProfile } = useContext(AuthContext);
 //   const [name, setName] = useState("")
 //   const [url, setUrl] = useState("")
 
@@ -27,19 +27,10 @@ const Register = () => {
         console.log(err);
       });
     });
-    updateProfile(user,name,url)
+    updateProfile(name,url)
    };
 
-   const updateProfile = (user, name, url) => {
-      updateProfile(user, {
-       displayName:name, photoURL:url,
-     }).then(() => {
-       console.log("profile updated");
-     }).catch((error) => {
-       console.log(error);
-     });
-
-  }
+   
 //    console.log(user);
   
     return (
@@ -66,7 +57,7 @@ const Register = () => {
                     <div className="mb-2">
                         <label
                             for="email"
-                            className="block text-sm font-semibold text-gray-800"
+                            className="block text-sm font-semibold text-gray-800 required"
                         >
                             Email
                         </label>
