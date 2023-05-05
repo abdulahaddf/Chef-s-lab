@@ -43,7 +43,9 @@ const Login = () => {
     if (passwordInput.length < 6) {
       setPasswordError("Password must be at least 6 characters long");
     } else if (!/.+[A-Z].+/.test(passwordInput)) {
-      setPasswordError("Password must contain at least one capital letter");
+      setPasswordError("Password must contain capital letter");
+    } else if (!/\d+/.test(passwordInput)) {
+      setPasswordError("Password must contain at least one number");
     } else {
       setPasswordError("");
     }

@@ -1,14 +1,11 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
 import { Link } from "react-router-dom";
-// import { updateProfile } from "firebase/auth";
 
 //   console.log(user, createUser);
 const Register = () => {
-  const { user, createUser, signInGoogle, signInGit, logOut, profileUpdate } =
+  const { createUser, signInGoogle, signInGit, logOut, profileUpdate } =
     useContext(AuthContext);
-  //   const [name, setName] = useState("")
-  //   const [url, setUrl] = useState("")
 
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
@@ -46,7 +43,6 @@ const Register = () => {
     });
   };
 
- 
   const handleEmail = (e) => {
     const emailInput = e.target.value;
     setEmail(emailInput);
@@ -67,7 +63,9 @@ const Register = () => {
     if (passwordInput.length < 6) {
       setPasswordError("Password must be at least 6 characters long");
     } else if (!/.+[A-Z].+/.test(passwordInput)) {
-      setPasswordError("Password must contain at least one capital letter");
+      setPasswordError("Password must contain capital letter");
+    } else if (!/\d+/.test(passwordInput)) {
+      setPasswordError("Password must contain at least one number");
     } else {
       setPasswordError("");
     }
@@ -108,7 +106,8 @@ const Register = () => {
                 type="email"
                 name="email"
                 onChange={handleEmail}
-                className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40" required
+                className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                required
               />
             </div>
             <div className="mb-2">
@@ -122,7 +121,8 @@ const Register = () => {
                 type="password"
                 name="password"
                 onChange={handlePassword}
-                className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40" required
+                className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                required
               />
             </div>
             <div className="mb-2">
@@ -195,15 +195,15 @@ const Register = () => {
           </div>
 
           <p className="mt-8 text-md font-normal text-center text-gray-700">
-          {" "}
-          Already have an account?{" "}
-          <Link
-            to="/login"
-            className="font-medium text-lg text-purple-600 hover:underline"
-          >
-            Sign In
-          </Link>
-        </p>
+            {" "}
+            Already have an account?{" "}
+            <Link
+              to="/login"
+              className="font-medium text-lg text-purple-600 hover:underline"
+            >
+              Sign In
+            </Link>
+          </p>
         </div>
       </div>
     </div>
