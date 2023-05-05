@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaRegHeart, FaRegStar, FaRegThumbsUp } from "react-icons/fa";
 import LazyLoad from "react-lazy-load";
 import { Link, useLoaderData } from "react-router-dom";
@@ -8,13 +8,24 @@ import "react-toastify/dist/ReactToastify.css";
 const Recipes = () => {
   const data = useLoaderData();
   const { name, picture, experience, recipes, totalLikes, bio } = data;
-  const [fav, setFav] = useState(true);
-  const notify = () => {
+
+  const [buttonState, setButtonState] = useState({});
+
+  const handleDisable = (i) => {
+    setButtonState((prevState) => ({ ...prevState, [i]: false }));
     toast("The recipe is your favorite!");
-    setFav(false);
   };
+
+  useEffect(() => {
+    const initialState = {};
+    for (let i = 0; i < recipes.length; i++) {
+      initialState[i] = true;
+    }
+    setButtonState(initialState);
+  }, [recipes]);
+
   return (
-    //chef"s details here 
+    //chef"s details here
     <div className="w-4/5 mx-auto">
       <div className="card md:card-side bg-base-100 p-5 shadow-xl my-10 border border-purple-600">
         <LazyLoad>
@@ -42,7 +53,7 @@ const Recipes = () => {
         <h1>Recipes of {name}</h1>
       </div>
       <div className="md:flex self-center">
-        {recipes.map((recipe) => (
+        {recipes.map((recipe, i) => (
           <>
             <div className=" border-2 border-purple-600 m-3 shadow-xl rounded-xl w-11/12">
               <div className="flex flex-col items-center justify-between h-full">
@@ -76,8 +87,8 @@ const Recipes = () => {
                   <div className="flex items-center gap-2 font-bold mt-4">
                     <button
                       className="btn-purple my-2"
-                      disabled={!fav}
-                      onClick={notify}
+                      disabled={!buttonState[i]}
+                      onClick={() => handleDisable(i)}
                     >
                       <FaRegHeart></FaRegHeart> Add to Favorite
                     </button>
