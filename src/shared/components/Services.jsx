@@ -8,7 +8,7 @@ const Services = () => {
         Our Services
       </h2>
       <div className="md:flex justify-evenly py-10 ">
-        <div className="card card-compact md:w-1/5 py-5 text-centerbg-base-100 shadow-lg">
+        <div className="card card-compact md:w-1/5 py-5 text-centerbg-base-100 shadow-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
           <LazyLoad>
             <img
               className="w-24 h-32 mx-auto"
@@ -20,7 +20,7 @@ const Services = () => {
             <h2 className="text-lg font-bold">Providing World's Best Chef</h2>
           </div>
         </div>
-        <div className="card card-compact md:w-1/5 py-5 text-centerbg-base-100 shadow-lg">
+        <div className="card card-compact md:w-1/5 py-5 text-centerbg-base-100 shadow-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
           <LazyLoad>
             <img
               className="w-24 h-32 mx-auto"
@@ -33,7 +33,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="card card-compact md:w-1/5 py-5 text-centerbg-base-100 shadow-lg">
+        <div className="card card-compact md:w-1/5 py-5 text-centerbg-base-100 shadow-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
           <LazyLoad>
             <img
               className="w-24 h-32 mx-auto"
@@ -46,7 +46,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="card card-compact md:w-1/5 py-5 text-centerbg-base-100 shadow-lg">
+        <div className="card card-compact md:w-1/5 py-5 text-centerbg-base-100 shadow-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
           <LazyLoad>
             <img
               className="h-32 mx-auto"

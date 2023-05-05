@@ -41,7 +41,6 @@ const Recipes = () => {
       <div className="border p-2 shadow-md text-center text-3xl my-10">
         <h1>Recipes of {name}</h1>
       </div>
-      // chef"s recipes here
       <div className="md:flex self-center">
         {recipes.map((recipe) => (
           <>
@@ -57,19 +56,19 @@ const Recipes = () => {
                   </div>
                   <h1>
                     <span className="font-semibold">Recipe Name:</span>{" "}
-                    {recipe.name}
+                    {recipe?.name}
                   </h1>
                   <p>
                     <span className="font-semibold">Ingredients:</span>{" "}
-                    {recipe.ingredients}
+                    {recipe?.ingredients}
                   </p>
                   <p>
                     <span className="font-semibold">Cooking Method:</span>{" "}
-                    {recipe.method}
+                    {recipe?.method}
                   </p>
                   <p className="flex items-center">
                     <span className="font-semibold">Ratings:</span>{" "}
-                    {recipe.ratings}
+                    {recipe?.ratings}
                     <FaRegStar></FaRegStar>
                   </p>
                 </div>
