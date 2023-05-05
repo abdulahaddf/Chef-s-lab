@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import { updateProfile } from "firebase/auth";
 
 //   console.log(user, createUser);
@@ -32,7 +32,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     const url = form.url.value;
-    console.log(user, name, email, password, url);
+    // console.log(user, name, email, password, url);
 
     createUser(email, password).then((result) => {
       const loggedUser = result.user;
@@ -46,9 +46,7 @@ const Register = () => {
     });
   };
 
-  const navigate = useNavigate();
-  const location = useLocation();
-
+ 
   const handleEmail = (e) => {
     const emailInput = e.target.value;
     setEmail(emailInput);

@@ -43,9 +43,9 @@ const Recipes = () => {
       <div className="md:flex self-center">
         {recipes.map((recipe) => (
           <>
-            <div className=" border-2 border-purple-600 m-4 p-4 shadow-xl rounded-xl w-96">
+            <div className=" border-2 border-purple-600 m-3 shadow-xl rounded-xl w-11/12">
               <div className="flex flex-col items-center justify-between h-full">
-                <div>
+                <div className="p-3">
                   <div>
                     <img
                       className="rounded-md"
@@ -74,7 +74,7 @@ const Recipes = () => {
                 <div>
                   <div className="flex items-center gap-2 font-bold mt-4">
                     <button
-                      className="btn-purple"
+                      className="btn-purple my-2"
                       disabled={!fav}
                       onClick={notify}
                     >

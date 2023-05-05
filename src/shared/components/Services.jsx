@@ -3,7 +3,7 @@ import LazyLoad from "react-lazy-load";
 
 const Services = () => {
   return (
-    <div className="border shadow-lg border-purple-600 my-10 w-11/12 mx-auto">
+    <div className="border shadow-lg border-purple-600 my-32 bg-base-100 w-11/12 mx-auto">
       <h2 className="text-4xl text-purple-600  font-bold my-5 text-center">
         Our Services
       </h2>

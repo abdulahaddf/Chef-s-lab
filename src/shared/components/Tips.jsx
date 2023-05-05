@@ -3,7 +3,7 @@ import React from "react";
 const Tips = () => {
   return (
     <div>
-      <div className="border w-11/12 mx-auto  my-10 px-2 md:px-10 shadow-xl border-purple-600">
+      <div className="border w-11/12 mx-auto  my-10 p-5 md:px-10 shadow-xl border-purple-600">
         <h2 className="text-4xl text-purple-600 font-bold mb-4 text-center">
           Cooking Tips and Techniques
         </h2>
