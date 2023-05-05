@@ -31,7 +31,7 @@ const Recipes = () => {
         <LazyLoad>
           <img className="w-96 rounded-md" src={picture} alt="Chef" />
         </LazyLoad>
-        <div className="card-body p-2 self-center">
+        <div className="card-body md:w-96 p-2 self-center">
           <h2 className="card-title font-bold">{name}</h2>
           <p>
             <span className="font-semibold">Bio:</span> {bio}
