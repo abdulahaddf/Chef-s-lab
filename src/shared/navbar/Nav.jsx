@@ -24,7 +24,7 @@ const Nav = () => {
         <div className="mr-3">
           <NavLink
             className={({ isActive }) =>
-              isActive ? "text-purple-900" : "text-purple-600"
+              isActive ? "text-purple-900" : "text-purple-600 link link-hover"
             }
             to="/"
           >
@@ -34,7 +34,7 @@ const Nav = () => {
         <div>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "text-purple-900" : "text-purple-600"
+              isActive ? "text-purple-900" : "text-purple-600 link link-hover"
             }
             to="/blog"
           >
@@ -55,7 +55,7 @@ const Nav = () => {
             </button>
             <div className="relative w-10 rounded-full">
               <img className="rounded-full" src={user?.photoURL} />
-              <div className="absolute top-0 hover:top-9 right-0 hover:right-12 opacity-0 hover:opacity-100">
+              <div className="absolute top-0 hover:top-8 right-0 hover:right-12 opacity-0 hover:opacity-100">
                 <p className="text-purple-700 text-md font-medium w-24">
                   {user?.displayName}
                 </p>

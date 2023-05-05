@@ -23,11 +23,12 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
-
+// sign in with email and password
   const signIn = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
+  //logout
   const logOut = () => {
     setLoading(true);
     return signOut(auth)
@@ -36,7 +37,7 @@ const AuthProvider = ({ children }) => {
       })
       .catch((err) => console.log(err));
   };
-
+//login with google
   const provider = new GoogleAuthProvider();
 
   const signInGoogle = () => {
@@ -51,7 +52,7 @@ const AuthProvider = ({ children }) => {
         console.log(err.message);
       });
   };
-
+//login with github
   const gitProvider = new GithubAuthProvider();
   const signInGit = () => {
     signInWithPopup(auth, gitProvider)
@@ -76,7 +77,7 @@ const AuthProvider = ({ children }) => {
     return () => unSubscribe();
   }, []);
 
-  console.log(auth, user);
+  // console.log(auth, user);
   const authInfo = {
     user,
     createUser,

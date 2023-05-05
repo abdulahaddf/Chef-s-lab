@@ -10,7 +10,7 @@ const ChefCard = ({ data }) => {
     <div className="md:w-11/12">
       <div className="card md:card-side bg-base-100 p-2 shadow-xl self-center">
         <LazyLoad>
-          <img className="w-fit rounded-md" src={picture} alt="Chef" />
+          <img className="w-fit rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110" src={picture} alt="Chef" />
         </LazyLoad>
 
         <div className="card-body p-2 md:p-8 w-2/3 text-left">

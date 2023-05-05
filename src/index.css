@@ -4,6 +4,6 @@
 
 @layer components {
     .btn-purple{
-        @apply btn bg-purple-600 hover:bg-purple-800;
+        @apply btn bg-purple-600 hover:bg-purple-800 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110;
     }
 }

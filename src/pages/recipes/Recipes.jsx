@@ -14,6 +14,7 @@ const Recipes = () => {
     setFav(false);
   };
   return (
+    //chef"s details here 
     <div className="w-4/5 mx-auto">
       <div className="card md:card-side bg-base-100 p-5 shadow-xl my-10 border border-purple-600">
         <LazyLoad>
@@ -40,6 +41,7 @@ const Recipes = () => {
       <div className="border p-2 shadow-md text-center text-3xl my-10">
         <h1>Recipes of {name}</h1>
       </div>
+      // chef"s recipes here
       <div className="md:flex self-center">
         {recipes.map((recipe) => (
           <>
@@ -48,7 +50,7 @@ const Recipes = () => {
                 <div className="p-3">
                   <div>
                     <img
-                      className="rounded-md"
+                      className="rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 my-5"
                       src={recipe?.photo}
                       alt="photo"
                     />

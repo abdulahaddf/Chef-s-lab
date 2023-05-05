@@ -33,8 +33,8 @@ const Home = () => {
           <ChefCard data={data} key={data.id}></ChefCard>
         ))}
       </div>
-      <Tips></Tips>
       <Services></Services>
+      <Tips></Tips>
     </div>
   );
 };
