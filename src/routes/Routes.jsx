@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
-        path: ":id",
+        path: "/chef/:id",
         element: (
           <PrivateRoutes>
             <Recipes></Recipes>
@@ -47,6 +47,10 @@ const router = createBrowserRouter([
           fetch(
             `https://chef-recipe-server-abdulahaddf.vercel.app/data/${params.id}`
           ),
+      },
+      {
+        path: "/*",
+        element: <ErrorPage></ErrorPage>,
       },
     ],
   },

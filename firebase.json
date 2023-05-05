@@ -6,17 +6,5 @@
       "**/.*",
       "**/node_modules/**"
     ]
-  },
-  "rewrites": [
-    {
-      "source": "**",
-      "destination": "/index.html"
-    }
-  ],
-  "error-pages": [
-    {
-      "code": 404,
-      "path": "./public/ErrorPage.jsx"
-    }
-  ]
+  }
 }
